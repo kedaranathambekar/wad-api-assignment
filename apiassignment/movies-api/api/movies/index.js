@@ -1,11 +1,15 @@
 import express from 'express';
-import {  movies, movieReviews, movieDetailsmovieReviews } from './moviesData';
+import {   movieReviews } from './moviesData';
 import uniqid from 'uniqid';
 import movieModel from './movieModel';
 import asyncHandler from 'express-async-handler';
 import {
     getUpcomingMovies
   } from '../tmdb-api';
+
+  import { getPopularMovies } from '../tmdb-api';
+import { getTopRatedMovies } from '../tmdb-api';
+
 const router = express.Router(); 
 router.get('/', asyncHandler(async (req, res) => {
     let { page = 1, limit = 10 } = req.query; // destructure page and limit and set default values
@@ -67,4 +71,16 @@ router.get('/tmdb/upcoming', asyncHandler( async(req, res) => {
     const upcomingMovies = await getUpcomingMovies();
     res.status(200).json(upcomingMovies);
   }));
+
+  router.get('/tmdb/top_rated', asyncHandler( async(req, res) => {
+    const topRatedMovies = await getTopRatedMovies();
+    res.status(200).json(topRatedMovies);
+  }));
+
+//Popular
+router.get('/tmdb/popular', asyncHandler( async(req, res) => {
+    const popularMovies = await getPopularMovies();
+    res.status(200).json(popularMovies);
+  }));
 export default router;
+
