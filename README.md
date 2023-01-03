@@ -6,15 +6,15 @@ Name: [Your Name]
 ​
 [A bullet-point list of the ADDITIONAL features/endpoints you have implemented in the API **THAT WERE NOT IN THE LABS** ]. 
 ​
- + Feature 1 - .... a statement of its purpose/objective ..... 
+ + Get toprated movies: Get a list of movies using a movie ID
 ​
- + Feature 2 - .......
+ + Get popular movies: Get a list of movies using a movie ID
 ​
- + Feature 3 - ......
+
 ​
-   e.g.
+   
 ​
- + Get Similar Movies:  Get a list of similar movies using a movie ID. 
+ 
 ​
 ## Installation Requirements
 ​
@@ -54,7 +54,8 @@ Give an overview of your web API design, perhaps similar to the following:
 | /api/movies |Gets a list of movies | N/A | N/A |
 | /api/movies/{movieid} | Get a Movie | N/A | N/A | N/A
 | /api/movies/{movieid}/reviews | Get all reviews for movie | Create a new review for Movie | N/A | N/A  
-| ... | ... | ... | ... | ...
+| /api/popular  | Get a movie | N/A | N/A |
+| /api/topRated  | Get a topRatedmovie | N/A | N/A |
 ​
 If you have your API design on an online platform or graphic, please link to it (e.g. [Swaggerhub](https://app.swaggerhub.com/)).
 ​
