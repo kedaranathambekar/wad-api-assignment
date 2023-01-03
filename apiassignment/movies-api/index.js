@@ -1,6 +1,8 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import moviesRouter from './api/movies';
+import topRatedRouter from './api/topRated';
+import popularRouter from './api/popular';
 import genresRouter from './api/genres';
 import './db';
 import './seedData';
@@ -31,7 +33,9 @@ app.use(express.json());
  app.use('/api/movies', moviesRouter);
 app.use('/api/genres', genresRouter);
 app.use('/api/users', usersRouter);
-
+// app.use('/api/topRated',  topRatedRouter);
+app.use('/api/popular', popularRouter);
+app.use('/api/topRated', topRatedRouter);
 app.use(errHandler);
 
 app.listen(port, () => {
